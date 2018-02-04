@@ -59,6 +59,7 @@ function WebTorrent (opts) {
   EventEmitter.call(self)
 
   if (!opts) opts = {}
+  self.Torrent = Torrent
 
   if (typeof opts.peerId === 'string') {
     self.peerId = opts.peerId
