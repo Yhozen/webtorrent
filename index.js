@@ -21,6 +21,7 @@ var zeroFill = require('zero-fill')
 
 var TCPPool = require('./lib/tcp-pool') // browser exclude
 var Torrent = require('./lib/torrent')
+var Discovery = require('torrent-discovery')
 
 /**
  * WebTorrent version.
@@ -59,7 +60,7 @@ function WebTorrent (opts) {
   EventEmitter.call(self)
 
   if (!opts) opts = {}
-  self.Torrent = Torrent
+  self.Discovery = Discovery
 
   if (typeof opts.peerId === 'string') {
     self.peerId = opts.peerId
